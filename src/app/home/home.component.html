@@ -7,7 +7,7 @@
             <h4><b>Manage Trucks</b></h4>
           </div>
           <div class="col-sm-6">
-            <button class="btn btn-success" (click)="AddEmployee()">
+            <button class="btn btn-success" (click)="AddTruck()">
               <i class='fas fa-plus-circle'></i><span> ADD</span>
             </button>
           </div>
@@ -30,12 +30,12 @@
             <td>{{ truck.brand }}</td>
             <td>{{ truck.yearModel }}</td>
             <td>
-              <a href="#" [routerLink]="['/EditEmployee/', truck.licensePlate]" class="btn"><i class="fa fa-edit edit"></i></a>
+              <a href="#" [routerLink]="['/EditTruck/', truck.licensePlate]" class="btn"><i class="fa fa-edit edit"></i></a>
               <button type="button" (click)="deleteTruckConfirmation(truck)" class="btn"><i class='fas fa-trash-alt delete'></i></button>
             </td>
           </tr>
           <tr>
-            <td *ngIf="truckList.length == 0" colspan="6">No Employee Found</td>
+            <td *ngIf="truckList.length == 0" colspan="6">No Trucks Found</td>
           </tr>
         </tbody>
       </table>

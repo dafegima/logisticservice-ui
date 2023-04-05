@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ViewEmployeeComponent } from './view-employee/view-employee.component';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
+import { ViewTruckComponent } from './view-truck/view-truck.component';
+import { AddTruckComponent } from './add-truck/add-truck.component';
+import { EditTruckComponent } from './edit-truck/edit-truck.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,9 +20,9 @@ import { LocationViewerComponent } from './location-viewer/location-viewer.compo
   declarations: [
     AppComponent,
     HomeComponent,
-    ViewEmployeeComponent,
-    AddEmployeeComponent,
-    EditEmployeeComponent,
+    ViewTruckComponent,
+    AddTruckComponent,
+    EditTruckComponent,
     AddServiceComponent,
     ViewServicesComponent,
     LocationViewerComponent

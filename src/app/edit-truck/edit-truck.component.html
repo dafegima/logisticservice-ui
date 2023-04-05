@@ -4,7 +4,7 @@
       <div class="table-title">
         <div class="row">
           <div class="col-sm-6">
-            <h4><b>New Truck</b></h4>
+            <h4><b>Update Truck</b></h4>
           </div>
           <div class="col-sm-6">
             <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="LicensePlate" required maxlength="10"
-                [(ngModel)]="addTruckForm.licensePlate" name="LicensePlate" #LicensePlate="ngModel">
+                [(ngModel)]="editTruckForm.LicensePlate" name="LicensePlate" #LicensePlate="ngModel" readonly>
               <div *ngIf="LicensePlate.errors && isSubmitted" class="alert alert-danger validationError">
                 <div [hidden]="!LicensePlate.errors?.['required']">
                   License Plate is required
@@ -34,7 +34,7 @@
             </div>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="Color" required maxlength="255"
-                [(ngModel)]="addTruckForm.color" name="Color" #Color="ngModel">
+                [(ngModel)]="editTruckForm.Color" name="Color" #Color="ngModel">
               <div *ngIf="Color.errors && isSubmitted" class="alert alert-danger validationError">
                 <div [hidden]="!Color.errors?.['required']">
                   Color is required
@@ -48,7 +48,7 @@
             </div>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="Brand" required maxlength="255"
-                [(ngModel)]="addTruckForm.brand" name="Brand" #Brand="ngModel">
+                [(ngModel)]="editTruckForm.Brand" name="Brand" #Brand="ngModel">
               <div *ngIf="Brand.errors && isSubmitted" class="alert alert-danger validationError">
                 <div [hidden]="!Brand.errors?.['required']">
                   Brand is required
@@ -61,18 +61,18 @@
               <label class="p-t-b-10">Year Model<span class="requiredStar">*</span></label>
             </div>
             <div class="col-sm-9">
-              <textarea class="form-control" id="YearModel" required [(ngModel)]="addTruckForm.yearModel" name="YearModel"
+              <textarea class="form-control" id="YearModel" required [(ngModel)]="editTruckForm.YearModel" name="YearModel"
                 #YearModel="ngModel">></textarea>
               <div *ngIf="YearModel.errors && isSubmitted" class="alert alert-danger validationError">
                 <div [hidden]="!YearModel.errors?.['required']">
-                  Year Model is required
+                  YearModel is required
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="table-footer">
-          <button class="btn btn-success" (click)="AddTruck(truckForm.form.valid)">Submit</button>
+          <button class="btn btn-success" (click)="EditTruck(truckForm.form.valid)">Submit</button>
         </div>
       </form>
     </div>

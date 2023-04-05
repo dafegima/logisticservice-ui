@@ -26,27 +26,21 @@ export class AddServiceComponent implements OnInit {
     this.isSubmitted = true;
     if (isValid) {
       this.httpProvider.saveService(this.addServiceForm).subscribe(async data => {
-        if (data != null && data.body != null) {
-          if (data != null && data.body != null) {
-            var resultData = data.body;
-            if (resultData != null && resultData.isSuccess) {
-              this.toastr.success(resultData.message);
+        if (data != null){
+              this.toastr.success("Service saved successfully.");
               setTimeout(() => {
                 this.router.navigate(['/Services']);
               }, 500);
             }
-          }
-        }
-      },
+          },
         async error => {
           this.toastr.error(error.message);
           setTimeout(() => {
             this.router.navigate(['/Services']);
           }, 500);
-        });
+        })
+      }
     }
-  }
-
 }
 
 export class serviceForm {

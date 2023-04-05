@@ -5,11 +5,11 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpProviderService } from '../service/http-provider.service';
 
 @Component({
-  selector: 'app-edit-employee',
-  templateUrl: './edit-employee.component.html',
-  styleUrls: ['./edit-employee.component.scss']
+  selector: 'app-edit-truck',
+  templateUrl: './edit-truck.component.html',
+  styleUrls: ['./edit-truck.component.scss']
 })
-export class EditEmployeeComponent implements OnInit {
+export class EditTruckComponent implements OnInit {
   editTruckForm: truckForm = new truckForm();
 
   @ViewChild("truckForm")
@@ -46,16 +46,11 @@ export class EditEmployeeComponent implements OnInit {
     if (isValid) {
       debugger
       this.httpProvider.updateTruck(this.editTruckForm).subscribe(async data => {
-        if (data != null && data.body != null) {
-          var resultData = data.body;
-          if (resultData != null && resultData.isSuccess) {
-            if (resultData != null && resultData.isSuccess) {
-              this.toastr.success(resultData.message);
+        if (data != null) {
+              this.toastr.success("Truck saved successfully.");
               setTimeout(() => {
                 this.router.navigate(['/Home']);
               }, 500);
-            }
-          }
         }
       },
         async error => {

@@ -4,11 +4,11 @@ import { HttpProviderService } from '../service/http-provider.service';
 import { WebApiService } from '../service/web-api.service';
 
 @Component({
-  selector: 'app-view-employee',
-  templateUrl: './view-employee.component.html',
-  styleUrls: ['./view-employee.component.scss']
+  selector: 'app-view-truck',
+  templateUrl: './view-truck.component.html',
+  styleUrls: ['./view-truck.component.scss']
 })
-export class ViewEmployeeComponent implements OnInit {
+export class ViewTruckComponent implements OnInit {
 
   licensePlate: any;
   employeeDetail : any= [];

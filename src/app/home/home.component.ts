@@ -65,8 +65,8 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  AddEmployee() {
-    this.router.navigate(['AddEmployee']);
+  AddTruck() {
+    this.router.navigate(['AddTruck']);
   }
 
   deleteTruckConfirmation(truck: any) {
@@ -81,13 +81,8 @@ export class HomeComponent implements OnInit {
 
   deleteTruck(truck: any) {
     this.httpProvider.deleteTruckById(truck.licensePlate).subscribe((data : any) => {
-      if (data != null && data.body != null) {
-        var resultData = data.body;
-        if (resultData != null && resultData.isSuccess) {
-          this.toastr.success(resultData.message);
-          this.getAllTrucks();
-        }
-      }
+        this.toastr.success("Truck deleted successfully.");
+        this.getAllTrucks();
     },
     (error : any) => {});
   }
