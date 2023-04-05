@@ -1,0 +1,49 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Manage Services</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-success" (click)="AddService()">
+                <i class='fas fa-plus-circle'></i><span> ADD</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered table-content">
+          <thead>
+            <tr class="center-align">
+              <th>License Plate</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Origin</th>
+              <th>Origin Latitude</th>
+              <th>Origin Longitude</th>
+              <th>Destination</th>
+              <th>Destination Latitude</th>
+              <th>Destination Longitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of serviceList" class="center-align">
+              <td>{{ service.licensePlate }}</td>
+              <td>{{ service.description }}</td>
+              <td>{{ service.status }}</td>
+              <td>{{ service.origin }}</td>
+              <td>{{ service.originLatitude }}</td>
+              <td>{{ service.originLongitude }}</td>
+              <td>{{ service.destination }}</td>
+              <td>{{ service.destinationLatitude }}</td>
+              <td>{{ service.destinationLongitude }}</td>
+            </tr>
+            <tr>
+              <td *ngIf="serviceList.length == 0" colspan="6">No Services Found</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,136 @@
+<div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>New Service</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/Services" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                &nbsp;Back</a>
+            </div>
+          </div>
+        </div>
+        <form #serviceForm="ngForm">
+          <div class="table-content">
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="LicensePlate" class="p-t-b-10">License Plate<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="LicensePlate" required maxlength="10"
+                  [(ngModel)]="addServiceForm.licensePlate" name="LicensePlate" #LicensePlate="ngModel">
+                <div *ngIf="LicensePlate.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!LicensePlate.errors?.['required']">
+                    License Plate is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="Description" class="p-t-b-10">Description<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Description" required maxlength="10"
+                  [(ngModel)]="addServiceForm.description" name="Description" #Description="ngModel">
+                <div *ngIf="Description.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Description.errors?.['required']">
+                    Description is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="Origin" class="p-t-b-10">Origin<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Origin" required maxlength="255"
+                  [(ngModel)]="addServiceForm.origin" name="Origin" #Origin="ngModel">
+                <div *ngIf="Origin.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Origin.errors?.['required']">
+                    Origin is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Origin Latitude<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="OriginLatitude" required maxlength="255"
+                  [(ngModel)]="addServiceForm.originLatitude" name="OriginLatitude" #OriginLatitude="ngModel" readonly>
+                <div *ngIf="OriginLatitude.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!OriginLatitude.errors?.['required']">
+                    Origin Latitude is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Origin Longitude<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="OriginLongitude" required maxlength="255"
+                  [(ngModel)]="addServiceForm.originLongitude" name="OriginLongitude" #OriginLongitude="ngModel" readonly>
+                <div *ngIf="OriginLongitude.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!OriginLongitude.errors?.['required']">
+                    Origin Longitude is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="Destination" class="p-t-b-10">Destination<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Destination" required maxlength="255"
+                  [(ngModel)]="addServiceForm.destination" name="Destination" #Destination="ngModel">
+                <div *ngIf="Destination.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!Destination.errors?.['required']">
+                    Destination is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="DestinationLatitude" class="p-t-b-10">Destination Latitude<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="DestinationLatitude" required maxlength="255"
+                  [(ngModel)]="addServiceForm.destinationLatitude" name="DestinationLatitude" #DestinationLatitude="ngModel" readonly>
+                <div *ngIf="DestinationLatitude.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!DestinationLatitude.errors?.['required']">
+                    Destination Latitude is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-10 row">
+              <div class="col-sm-3">
+                <label for="DestinationLongitude" class="p-t-b-10">Destination Longitude<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="DestinationLongitude" required maxlength="255"
+                  [(ngModel)]="addServiceForm.destinationLongitude" name="DestinationLongitude" #DestinationLongitude="ngModel" readonly>
+                <div *ngIf="DestinationLongitude.errors && isSubmitted" class="alert alert-danger validationError">
+                  <div [hidden]="!DestinationLongitude.errors?.['required']">
+                    Destination Longitude is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-success" (click)="AddService(serviceForm.form.valid)">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

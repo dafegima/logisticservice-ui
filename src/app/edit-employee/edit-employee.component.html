@@ -1,0 +1,80 @@
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>Update Employee</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              &nbsp;Back</a>
+          </div>
+        </div>
+      </div>
+      <form #truckForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="LicensePlate" class="p-t-b-10">License Plate<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="LicensePlate" required maxlength="255"
+                [(ngModel)]="editTruckForm.LicensePlate" name="LicensePlate" #LicensePlate="ngModel">
+              <div *ngIf="LicensePlate.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!LicensePlate.errors?.['required']">
+                  License Plate is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Color" class="p-t-b-10">Color<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Color" required maxlength="255"
+                [(ngModel)]="editTruckForm.Color" name="Color" #Color="ngModel">
+              <div *ngIf="Color.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Color.errors?.['required']">
+                  Color is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Brand<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Brand" required maxlength="255"
+                [(ngModel)]="editTruckForm.Brand" name="Brand" #Brand="ngModel">
+              <div *ngIf="Brand.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Brand.errors?.['required']">
+                  Brand is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label class="p-t-b-10">Year Model<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="YearModel" required [(ngModel)]="editTruckForm.YearModel" name="YearModel"
+                #YearModel="ngModel">></textarea>
+              <div *ngIf="YearModel.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!YearModel.errors?.['required']">
+                  YearModel is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="EditTruck(truckForm.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
