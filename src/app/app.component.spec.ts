@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'AngularCRUDApplication'`, () => {
+  it(`should have as title 'LogisticServicesUI'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('AngularCRUDApplication');
+    expect(app.title).toEqual('LogisticServicesUI');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AngularCRUDApplication app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('LogisticServicesUI app is running!');
   });
 });

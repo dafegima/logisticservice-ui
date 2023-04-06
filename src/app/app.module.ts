@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ViewTruckComponent } from './view-truck/view-truck.component';
 import { AddTruckComponent } from './add-truck/add-truck.component';
 import { EditTruckComponent } from './edit-truck/edit-truck.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,6 @@ import { LocationViewerComponent } from './location-viewer/location-viewer.compo
   declarations: [
     AppComponent,
     HomeComponent,
-    ViewTruckComponent,
     AddTruckComponent,
     EditTruckComponent,
     AddServiceComponent,

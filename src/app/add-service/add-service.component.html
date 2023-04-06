@@ -33,7 +33,7 @@
                 <label for="Description" class="p-t-b-10">Description<span class="requiredStar">*</span></label>
               </div>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="Description" required maxlength="10"
+                <input type="text" class="form-control" id="Description" required maxlength="200"
                   [(ngModel)]="addServiceForm.description" name="Description" #Description="ngModel">
                 <div *ngIf="Description.errors && isSubmitted" class="alert alert-danger validationError">
                   <div [hidden]="!Description.errors?.['required']">

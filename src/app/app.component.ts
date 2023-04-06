@@ -19,6 +19,6 @@ export class AppComponent {
   }
 
   LocationClick(){
-    this.router.navigate(['Home']);
+    this.router.navigate(['Location']);
   }
 }
